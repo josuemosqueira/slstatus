@@ -1,72 +1,35 @@
 **slstatus - suckless status**
 ==========================
-slstatus is a suckless status monitor for window managers that use WM_NAME
-(e.g. dwm) or stdin to fill the status bar.
+slstatus es un monitor de estado de ![Suckless](https://suckless.org/) para gestores de ventana que usa WM_NAME
+(por ejm. dwm) o stdin para llenar la barra de estado.
 
 
-**Features**
+**Características**
 --------
-- Battery percentage/state/time left
-- CPU usage
-- CPU frequency
-- Custom shell commands
-- Date and time
-- Disk status (free storage, percentage, total storage and used storage)
-- Available entropy
-- Username/GID/UID
+- Porcentaje/estado/tiempo restante de batería
+- Uso de CPU 
+- Frecuencia de CPU 
+- Comandos de shell personalizados
+- Fecha y hora (duh)
+- Estado de disco (Espacio libre, porcentaje, total, usado, etc.)
+- Entropía disponible
+- Nombre de usuario/GID/UID
 - Hostname
-- IP address (IPv4 and IPv6)
-- Kernel version
-- Keyboard indicators
+- Dirección IP (IPv4 and IPv6)
+- Versión de Kernel
+- Indicadores de teclado.
 - Keymap
-- Load average
-- Network speeds (RX and TX)
-- Number of files in a directory (hint: Maildir)
-- Memory status (free memory, percentage, total memory and used memory)
-- Swap status (free swap, percentage, total swap and used swap)
-- Temperature
+- Velocidad de red (RX y TX)
+- Numero de archivos en un folder ( Maildir)
+- Estado de memoria
+- Estado swap
+- Temperatura
 - Uptime
-- Volume percentage (OSS/ALSA)
-- WiFi signal percentage and ESSID
+- Porcentaje de Volumen (OSS/ALSA)
+- Porcentaje de señal WiFi y ESSID
 
-
-**Requirements**
+Instalación
 ------------
-Currently slstatus works on FreeBSD, Linux and OpenBSD.
-In order to build slstatus you need the Xlib header files.
-
-If you will not change nothing of this configuration, you will also need to install the following utilities:
-```
-1. acpilight
-2. alsa
-```
-IT'S POSSIBLE THAT YOU NEED TO CHANGE THE VALUE OF THE CONSTANT **"bat"** in case you use a laptop and
-its battery file has not fond at **/sys/class/power_supply/BAT0.** Usually the value of this is: **BAT0** or **BAT1.**
-
-If you want to use "the weather view feature" you need to install [ansiweather](https://github.com/brookiestein/ansiweather) 
-which is developed by [fcambus](https://github.com/fcambus).
-
-Installation
-------------
-Edit config.mk to match your local setup (slstatus is installed into the
-/usr/local namespace by default).
-
-Afterwards enter the following command to build and install slstatus (if
-necessary as root):
+Sudo o Doas:
 
     make clean install
-
-
-Running slstatus
-----------------
-See the man page for details.
-
-
-Configuration
--------------
-slstatus can be customized by creating a custom config.h and (re)compiling the
-source code. This keeps it fast, secure and simple.
-
-Todo
-----
-Cleaning up the whole codebase it the goal before thinking about a release.
